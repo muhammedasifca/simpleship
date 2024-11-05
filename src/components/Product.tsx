@@ -2,15 +2,16 @@ import { ProductProps } from "../type";
 
 
 const Product = (props: ProductProps) => {
-  const { img, name, price,set,cart } = props;
+  const { img, name, price,set,cart } = props 
+ 
   const addToCart = () => {
-    set([
+    set(cart=>[
       ...cart,
       {
         name: name,
         price: price,
         img: img,
-      },
+      }
     ]);
   };
  

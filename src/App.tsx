@@ -10,6 +10,7 @@ function App() {
   const [filteredItem, setFilteredItem] = useState<items[]>();
   const [isCart, setIsCart] = useState(false);
   const [cartItem, setCartItem] = useState<CartProps[]>([]);
+  const [unique,setUnique]=useState<CartProps[]>()
 
 console.log(cartItem);
 
@@ -35,6 +36,7 @@ console.log(cartItem);
     const eventTarget = event.target as HTMLInputElement;
     setSearchName(eventTarget.value);
   };
+  
   const showCart = () => {
     setIsCart(!isCart);
   };
@@ -42,7 +44,9 @@ console.log(cartItem);
     cartItem.map(item=>[item.name,item])
   )
   const uniqueCart=[...mapFrom.values()]
-  console.log(uniqueCart);
+  useEffect(()=>{
+    setUnique(uniqueCart)
+  },[cartItem])
   
   return (
     <>
@@ -74,7 +78,7 @@ console.log(cartItem);
             )}
           </div>
         </div>
-        <ShowCart isCart={isCart} cartItems={uniqueCart}></ShowCart>
+        <ShowCart isCart={isCart} cartItems={unique}></ShowCart>
       </div>
     </>
   );

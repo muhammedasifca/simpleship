@@ -18,9 +18,8 @@ const CartProduct = (props:CartProps) => {
               <span>&#8377;</span> {price}
             </h3>
           </div>
-
           <button
-            
+            // onClick={remove}
             className="pr-5 pl-5 bg-red-700 rounded-md text-[white] text-[16px] font-medium align-middle hover:bg-red-600"
           >
            Remove
@@ -33,3 +32,4 @@ const CartProduct = (props:CartProps) => {
 }
 
 export default CartProduct
+

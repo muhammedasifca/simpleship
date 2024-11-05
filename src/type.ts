@@ -22,7 +22,7 @@ export type searchProps={
 
 export type clickProps={
   isCart:boolean
-  cartItems:CartProps[]
+  cartItems:CartProps[]|undefined
 }
 
 export type ProductProps = {
