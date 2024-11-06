@@ -35,7 +35,7 @@ const Product = (props: ProductProps) => {
 
             <button
               onClick={addToCart}
-              className="pr-5 pl-5 bg-[#3d3d35] rounded-md text-[white] text-[16px] font-medium align-middle hover:bg-[#57574b]"
+              className="active:scale-95 pr-5 pl-5 bg-[#3d3d35] rounded-md text-[white] text-[16px] font-medium align-middle hover:bg-[#57574b]"
             >
               Add to Cart
             </button>

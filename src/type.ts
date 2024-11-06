@@ -22,7 +22,10 @@ export type searchProps={
 
 export type clickProps={
   isCart:boolean
-  cartItems:CartProps[]|undefined
+  cartItems:CartProps[]
+  reff: React.MutableRefObject<HTMLDivElement | null>
+  setCartItems:React.Dispatch<React.SetStateAction<CartProps[]>>
+  mainCart:CartProps[]|undefined
 }
 
 export type ProductProps = {
@@ -37,4 +40,12 @@ export type CartProps={
   img: string;
   name: string;
   price: number;
+}
+
+export type ItemsProps={
+  img: string;
+  name: string;
+  price: number;
+  remove:React.Dispatch<React.SetStateAction<string>>
+
 }

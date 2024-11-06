@@ -8,9 +8,9 @@ const Navbar = (props: searchProps) => {
   return (
     <div>
       <nav className="z-50 fixed w-full top-0 h-20 bg-[#535343]">
-        <div className="px-10 h-full flex justify-between items-center">
+        <div className="px-10 h-full flex gap-3 justify-between items-center">
           <h2 className="text-[24px] font-bold text-gray-200">Simple Shop</h2>
-          <div className="ml-[50%]">
+          <div className="ml-0 md:ml-[50%]">
             <input
               className="rounded-2xl px-2 py-1 focus:outline-none text-[15px]"
               placeholder="Search....."
