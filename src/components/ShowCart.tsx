@@ -10,7 +10,9 @@ const ShowCart = (props: clickProps) => {
   cartItems?.forEach((item) => (sum += item.price));
 
   const checkOut = () => {
+    alert("Thank you for shopping with us")
     setCartItems([]);
+    window.location.reload()
   };
   
   useEffect(() => {
