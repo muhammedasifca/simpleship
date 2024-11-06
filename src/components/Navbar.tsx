@@ -2,8 +2,8 @@ import { searchProps } from "../type";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = (props: searchProps) => {
-  const { handleChange, value,handleClick,cartItems } = props;
-  const cartLength=cartItems.length
+  const { handleChange, value, handleClick, cartItems } = props;
+  const cartLength = cartItems.length;
 
   return (
     <div>
@@ -19,7 +19,10 @@ const Navbar = (props: searchProps) => {
               onChange={handleChange}
             />
           </div>
-          <div onClick={handleClick} className="relative right-0 cursor-pointer">
+          <div
+            onClick={handleClick}
+            className="relative right-0 cursor-pointer"
+          >
             <span className="text-white ">
               <FaShoppingCart />
             </span>

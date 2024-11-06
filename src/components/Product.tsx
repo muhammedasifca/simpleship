@@ -1,20 +1,18 @@
 import { ProductProps } from "../type";
 
-
 const Product = (props: ProductProps) => {
-  const { img, name, price,set} = props 
- 
+  const { img, name, price, set } = props;
+
   const addToCart = () => {
-    set(cart=>[
+    set((cart) => [
       ...cart,
       {
         name: name,
         price: price,
         img: img,
-      }
+      },
     ]);
   };
- 
 
   return (
     <div className="m-5 max-w-[381px] rounded-xl shadow-lg">

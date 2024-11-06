@@ -1,11 +1,10 @@
 import { ItemsProps } from "../type";
 
 const CartProduct = (props: ItemsProps) => {
- 
-  const { img, name, price,remove } = props;
-  const removeProduct=()=>{
-    remove(name)
-  }
+  const { img, name, price, remove } = props;
+  const removeProduct = () => {
+    remove(name);
+  };
   return (
     <div className="m-5 mx-auto max-w-[90%] rounded-xl shadow-lg bg-white">
       <div className="h-[300px]  flex justify-center p-6 gap-1">
@@ -22,7 +21,7 @@ const CartProduct = (props: ItemsProps) => {
                 <span>&#8377;</span> {price}
               </h3>
             </div>
-            
+
             <button
               onClick={removeProduct}
               className="px-2 bg-red-700 rounded-md text-[white] text-[12px] font-medium align-middle hover:bg-red-600"

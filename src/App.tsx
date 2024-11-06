@@ -12,16 +12,15 @@ function App() {
   const [cartItem, setCartItem] = useState<CartProps[]>([]);
   const [unique, setUnique] = useState<CartProps[]>();
   const divRef = useRef<HTMLDivElement | null>(null);
-  console.log("hi",unique);
-  
+  console.log("hi", unique);
 
   console.log(cartItem);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => {  
-        setProductData(data); 
+      .then((data) => {
+        setProductData(data);
         setFilteredItem(data);
       })
 
@@ -30,10 +29,12 @@ function App() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (divRef.current && !divRef.current.contains(event.target as HTMLInputElement)) {
-
+      if (
+        divRef.current &&
+        !divRef.current.contains(event.target as HTMLInputElement)
+      ) {
         setIsCart(false);
-      } 
+      }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -47,7 +48,7 @@ function App() {
 
   const searchProduct = (event: React.ChangeEvent) => {
     const eventTarget = event.target as HTMLInputElement;
-    setSearchName(eventTarget.value);  
+    setSearchName(eventTarget.value);
   };
 
   const showCart = () => {
@@ -63,7 +64,7 @@ function App() {
     <>
       <div className="relative ">
         <Navbar
-          handleChange={searchProduct} 
+          handleChange={searchProduct}
           value={searchName}
           handleClick={showCart}
           cartItems={uniqueCart}
@@ -76,7 +77,7 @@ function App() {
                   className="flex justify-center hover:scale-105 cursor-pointer"
                   key={item.id}
                 >
-                  <Product 
+                  <Product
                     cart={cartItem}
                     set={setCartItem}
                     img={item.image}
@@ -85,14 +86,20 @@ function App() {
                   ></Product>
                 </div>
               ))
-            )  : (
+            ) : (
               <div className="text-center min-h-[1200px] w-full text-3xl text-gray-600 ">
                 Loading.....
               </div>
             )}
           </div>
         </div>
-        <ShowCart reff={divRef} isCart={isCart} mainCart={unique} cartItems={cartItem} setCartItems={setCartItem}></ShowCart>
+        <ShowCart
+          reff={divRef}
+          isCart={isCart}
+          mainCart={unique}
+          cartItems={cartItem}
+          setCartItems={setCartItem}
+        ></ShowCart>
       </div>
     </>
   );

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { clickProps } from "../type";
 import CartProduct from "./CartProduct";
 
-
 const ShowCart = (props: clickProps) => {
   const { isCart, mainCart, cartItems, reff, setCartItems } = props;
   const [removeCart, setRemoveCart] = useState("");
@@ -10,11 +9,11 @@ const ShowCart = (props: clickProps) => {
   cartItems?.forEach((item) => (sum += item.price));
 
   const checkOut = () => {
-    alert("Thank you for shopping with us")
+    alert("Thank you for shopping with us");
     setCartItems([]);
-    window.location.reload()
+    window.location.reload();
   };
-  
+
   useEffect(() => {
     setCartItems(cartItems?.filter((item) => item.name != removeCart));
   }, [removeCart]);
@@ -26,7 +25,6 @@ const ShowCart = (props: clickProps) => {
         !isCart ? "translate-x-[100%]" : null
       }`}
     >
-   
       <div className="overflow-auto  h-full px-5  ">
         <h2 className="text-center mt-8 font-semibold text-gray-800 text-[36px]">
           Cart
